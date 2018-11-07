@@ -13,27 +13,23 @@
             height: 100%;
         }
 
-        .left {
+        .panel {
             width: 400px;
             height: 400px;
             /* background-color: blue; */
             float: left;
-            margin: 100px;
-        }
-
-        .right {
-            width: 400px;
-            height: 400px;
-            /* background-color: red; */
-            float: right;
-            margin: 100px;
+            margin: 10px;
         }
     </style>
 </head>
 
 <body>
-    <div id="left" class="left"></div>
-    <div id="right" class="right"></div>
+    <div id="processing-bar"></div>
+    <div id="left" class="panel">Ảnh 3D</div>
+    <div id="right" class="panel">
+        Ảnh gốc
+        <img src="model/house.jpg" style='height: 100%; width: 100%; object-fit: contain'>
+    </div>
     <script src="script/three.js"></script>
     <script src="script/OBJLoader.js"></script>
     <script src="script/OrbitControls.js"></script>

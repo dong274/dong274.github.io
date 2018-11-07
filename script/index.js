@@ -28,7 +28,7 @@ function create3D(elementID, obj) {
   this.scene.add(this.fillLight);
   this.scene.add(this.backLight);
 
-  this.camera.position.z = 3;
+  this.camera.position.z = 20;
 
   var self = this;
   this.loader = new THREE.OBJLoader();
@@ -37,10 +37,13 @@ function create3D(elementID, obj) {
     obj,
     // called when resource is loaded
     function(object) {
+      document.getElementById("processing-bar").innerHTML = "<h1>Done!!!</h1>";
       self.scene.add(object);
     },
     // called when loading is in progresses
     function(xhr) {
+      document.getElementById("processing-bar").innerHTML =
+        "<h1>Đang chạy dữ liệu...</h1>";
       console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
     },
     // called when loading has errors
@@ -54,22 +57,17 @@ function create3D(elementID, obj) {
   this.div.appendChild(this.renderer.domElement);
 
   this.control = new THREE.OrbitControls(this.camera, this.div);
+  this.control.zoomSpeed = 10;
 
   this.render = function() {
     this.renderer.render(this.scene, this.camera);
   };
 }
 
-// var geometry = new THREE.BoxGeometry(1, 1, 1);
-// var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-// var cube1 = new THREE.Mesh(geometry, material);
-// var cube2 = new THREE.Mesh(geometry, material);
-
-var left = new create3D("left", "model/scene_mesh_textured.obj");
+var left = new create3D("left", "model/house.obj");
 
 function animate() {
   requestAnimationFrame(animate);
-  //left.control.update();
   left.render();
 }
 
