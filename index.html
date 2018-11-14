@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>3D</title>
     <style>
-        body {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-        }
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
 
-        .panel {
-            width: 400px;
-            height: 400px;
-            /* background-color: blue; */
-            float: left;
-            margin: 10px;
-        }
+      .panel {
+        width: 400px;
+        height: 400px;
+        float: left;
+        margin: 10px;
+      }
     </style>
-</head>
-
-<body>
-    <div id="processing-bar"></div>
-    <div id="left" class="panel">Ảnh 3D</div>
-    <div id="right" class="panel">
-        Ảnh gốc
-        <img src="model/house.jpg" style='height: 100%; width: 100%; object-fit: contain'>
-    </div>
-    <script src="script/three.js"></script>
-    <script src="script/OBJLoader.js"></script>
-    <script src="script/OrbitControls.js"></script>
-    <script src="script/MTLLoader.js"></script>
-    <script src="script/index.js"></script>
-
-</body>
-
+  </head>
+  <body>
+    <div id="progress-bar"></div>
+    <div id="content" class="panel"></div>
+    <div id="content2" class="panel"></div>
+    <script src="js/three.js"></script>
+    <script src="js/threex.domevents.js"></script>
+    <script src="js/MTLLoader.js"></script>
+    <script src="js/OBJLoader.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/MapControls.js"></script>
+    <script src="js/initial3D.js"></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>
